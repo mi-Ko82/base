@@ -1,0 +1,24 @@
+{
+  "extends": ["plugin:prettier/recommended"],
+
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+
+  "env": {
+    "browser": true
+  },
+
+  "root": true,
+
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "info", "error"] }],
+    "prefer-arrow-callback": "error",
+    "prefer-const": "error",
+    "func-style": ["error", "expression"],
+    "arrow-body-style": ["error", "always"],
+    "quotes": ["error", "single"]
+  }
+
+}

@@ -1,0 +1,83 @@
+{
+    "remove-empty-rulesets": true,
+    "always-semicolon": true,
+    "color-case": "lower",
+    "block-indent": "    ",
+    "color-shorthand": true,
+    "element-case": "lower",
+    "eof-newline": true,
+    "leading-zero": false,
+    "quotes": "double",
+    "space-before-colon": "",
+    "space-after-colon": " ",
+    "space-before-combinator": " ",
+    "space-after-combinator": " ",
+    "space-between-declarations": "\n",
+    "space-before-opening-brace": " ",
+    "space-after-opening-brace": "\n",
+    "space-after-selector-delimiter": "\n",
+    "space-before-selector-delimiter": " ",
+    "space-before-closing-brace": "\n",
+    "strip-spaces": true,
+    "tab-size": true,
+    "unitless-zero": true,
+    "vendor-prefix-align": true,
+    "sort-order": [
+        [
+            "display",
+            "float",
+            "overflow",
+            "flex-wrap",
+            "align-items",
+            "justify-content",
+            "flex",
+            "order"
+        ],
+        [
+            "position",
+            "z-index",
+            "top",
+            "bottom",
+            "left",
+            "right"
+        ],
+        [
+            "width",
+            "max-width",
+            "min-width",
+            "height",
+            "max-height",
+            "min-height",
+            "margin",
+            "margin-top",
+            "margin-right",
+            "margin-bottom",
+            "margin-left",
+            "padding",
+            "padding-top",
+            "padding-right",
+            "padding-bottom",
+            "padding-left"
+        ],
+        [
+            "background",
+            "background-color",
+            "background-image",
+            "background-repeat",
+            "background-position",
+            "background-size",
+            "border",
+            "border-top",
+            "border-right",
+            "border-bottom",
+            "border-left"
+        ],
+        [
+            "color",
+            "font-size",
+            "font-weight",
+            "line-height",
+            "text-align"
+        ]
+    ]
+}

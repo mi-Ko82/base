@@ -1,0 +1,8 @@
+@import url('foundation/_base.css');
+
+.example {
+  display: flex;
+  color: black;
+  width: 100%;
+  background-color: red;
+}
