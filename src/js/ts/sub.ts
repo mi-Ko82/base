@@ -1,3 +1,4 @@
-export function hello() {
-  console.log('Typesctript import成功')
+export const hello = () => {
+  const el = <HTMLElement> document.querySelector('#title')
+  el.innerHTML = 'Hello!'
 }

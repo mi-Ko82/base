@@ -1,21 +1,21 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ImageminMozjpeg = require('imagemin-mozjpeg');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const ImageminMozjpeg = require('imagemin-mozjpeg')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 module.exports = {
   mode: 'production',
-  // entry: './src/index.js',
-  entry: './src/index.ts',
+  entry: './src/index.js',
+  // entry: './src/index.ts',
   devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'js/bundle.js',
+    filename: 'js/bundle.js'
   },
   module: {
     rules: [
@@ -40,39 +40,29 @@ module.exports = {
         use: 'ts-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: 'css-loader',
             options: {
               url: false
             }
           },
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
-            options: {
-              url: false
-            }
+            loader: 'postcss-loader'
           },
-          'postcss-loader',
           {
             loader: 'sass-loader',
             options: {
-              implementation: require('sass'),
               sassOptions: {
                 outputStyle: 'compressed'
               },
               sourceMap: true
             }
-          },
+          }
         ]
       },
       {
@@ -133,4 +123,4 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js', '.json']
   }
-};
+}

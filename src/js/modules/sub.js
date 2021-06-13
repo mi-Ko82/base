@@ -1,3 +1,4 @@
-export function hello() {
-  console.log('JavaSctript import成功')
+export const hello = () => {
+  const el = document.getElementById('#title')
+  el.innerHTML = 'Hello!'
 }
