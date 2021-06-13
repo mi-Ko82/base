@@ -5,11 +5,8 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozjpeg = require('imagemin-mozjpeg')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
   entry: './src/index.js',
   // entry: './src/index.ts',
   devtool: 'source-map',
@@ -79,35 +76,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      poot: 3000,
-      server: { baseDir: ['dist'] }
-    }),
-    new CleanWebpackPlugin({ verbose: true }),
     new MiniCssExtractPlugin({
       filename: 'css/styles.css'
     }),
     new CopyPlugin({
       patterns: [{ from: 'src/img', to: 'img' }]
-    }),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      pngquant: {
-        quality: '70-80'
-      },
-      gifsicle: {
-        interlaced: false,
-        options: 10,
-        colors: 256
-      },
-      svgo: {},
-      plugins: [
-        ImageminMozjpeg({
-          quality: 85,
-          progressive: true
-        })
-      ]
     }),
     new HtmlWebpackPlugin({
       template: './src/pug/index.pug',
